@@ -8,8 +8,9 @@ WORKDIR /app
 COPY parse_net.nimble .
 RUN nimble install -y --depsOnly
 
-# Copy source code
+# Copy source code and config
 COPY src/ src/
+COPY config.nims .
 
 # Build release binary
 RUN nimble build -d:release -y
